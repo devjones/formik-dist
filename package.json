@@ -18,21 +18,21 @@
   "main": "dist/index.js",
   "module": "dist/formik.esm.js",
   "typings": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "react": ">=15"
   },
   "scripts": {
     "test": "jest --env=jsdom",
     "test:watch": "npm run test -- --watch",
-    "start": "cp ./index.js ./dist/index.js && cross-env NODE_ENV=development rollup -w -c | tsc -w -p tsconfig.base.json",
+    "start":
+      "cp ./index.js ./dist/index.js && cross-env NODE_ENV=development rollup -w -c | tsc -w -p tsconfig.base.json",
     "prebuild": "rimraf dist",
-    "build": "cross-env NODE_ENV=production tsc -p tsconfig.base.json  && rollup -c && rimraf compiled && cp ./index.js ./dist/index.js",
+    "build":
+      "cross-env NODE_ENV=production tsc -p tsconfig.base.json  && rollup -c && rimraf compiled && cp ./index.js ./dist/index.js",
     "prepublish": "npm run build",
-    "format": "prettier --trailing-comma es5 --single-quote --write 'src/**/*' 'test/**/*' 'README.md'",
-    "precommit": "lint-staged",
+    "format":
+      "prettier --trailing-comma es5 --single-quote --write 'src/**/*' 'test/**/*' 'README.md'",
     "storybook": "start-storybook -p 9001",
     "addc": "all-contributors add",
     "start-website": "cd website && yarn start",
@@ -110,24 +110,13 @@
     "semi": true
   },
   "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{ts,tsx}"
-    ],
+    "collectCoverageFrom": ["src/**/*.{ts,tsx}"],
     "transform": {
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testMatch": [
-      "<rootDir>/test/**/?(*.)(spec|test).ts?(x)"
-    ],
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
-    ],
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "json"
-    ]
+    "testMatch": ["<rootDir>/test/**/?(*.)(spec|test).ts?(x)"],
+    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
+    "moduleFileExtensions": ["ts", "tsx", "js", "json"]
   },
   "size-limit": [
     {
